@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f5ef" />
+  <meta name="description" content="Encontrá dónde consultar por un estudio médico y revisá las fuentes antes de pedir turno." />
+  <title>estudioSI — encontrá dónde hacer tu estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="estudioSI, inicio"><span class="brand-mark"><i></i><i></i><i></i></span><span>estudio<span class="brand-accent">SI</span></span></a>
+    <nav aria-label="Navegación principal"><a href="#buscar">Buscar un estudio</a><a href="#como-verificamos">Cómo verificamos</a><button class="nav-report" data-open-report>Reportar un error</button></nav>
+    <button class="menu-toggle" aria-label="Abrir navegación" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> INFORMACIÓN CLARA PARA TU SALUD</div>
+        <h1>¿Qué estudio<br>necesitás <span>hacer?</span></h1>
+        <p class="hero-lede">Encontrá centros que figuran para esa prestación y revisá la información antes de pedir turno.</p>
+        <div class="trust-note"><span class="shield">✓</span><span>Mostramos de dónde sale la información<br>y cuándo fue actualizada.</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="pin"><div class="pin-core"><span>+</span></div></div><div class="art-label label-one"><b>01</b><span>Buscá tu estudio</span></div><div class="art-label label-two"><b>02</b><span>Verificá la fuente</span></div><div class="art-cross">✳</div></div>
+    </section>
+
+    <section class="search-wrap" id="buscar" aria-labelledby="search-title">
+      <div class="search-heading"><span class="section-kicker">EMPEZÁ POR ACÁ</span><span class="quiet-tag"><span class="tiny-dot"></span> Sin turnos ni registro</span></div>
+      <h2 id="search-title">Buscá un lugar para tu estudio</h2>
+      <form id="search-form" class="search-form">
+        <label class="field"><span class="field-icon">⌕</span><span class="field-content"><span>Estudio o práctica</span><input id="study-input" list="study-options" placeholder="Ej. resonancia, RMN…" autocomplete="off" required></span><datalist id="study-options"></datalist></label>
+        <label class="field select-field"><span class="field-icon icon-heart">♡</span><span class="field-content"><span>Cobertura</span><select id="coverage"><option value="pami">PAMI</option></select></span><span class="chevron">⌄</span></label>
+        <label class="field select-field"><span class="field-icon icon-pin">⌖</span><span class="field-content"><span>Provincia</span><select id="province"><option value="">Todas las provincias</option></select></span><span class="chevron">⌄</span></label>
+        <label class="field select-field"><span class="field-icon icon-city">⌂</span><span class="field-content"><span>Localidad</span><select id="city" disabled><option value="">Todas las localidades</option></select></span><span class="chevron">⌄</span></label>
+        <button class="search-button" type="submit">Buscar centros <span>→</span></button>
+      </form>
+      <div class="search-hint"><span class="hint-icon">i</span> La búsqueda inicial no requiere DNI ni número de afiliación.</div>
+    </section>
+
+    <section class="results-section" id="results" aria-live="polite" hidden>
+      <div class="results-title"><div><span class="section-kicker">RESULTADOS DE BÚSQUEDA</span><h2 id="results-heading"></h2></div><button class="text-button" id="clear-search">Limpiar búsqueda <span>×</span></button></div>
+      <div id="results-content"></div>
+    </section>
+
+    <section class="how-section" id="como-verificamos">
+      <div class="how-intro"><span class="section-kicker">CONFIANZA, CON CONTEXTO</span><h2>Una fuente clara<br>cambia la búsqueda.</h2><p>Que un lugar figure en una cartilla no siempre confirma que realice un estudio puntual. Por eso te contamos qué sabemos y qué falta confirmar.</p><button class="link-button" id="open-method">Conocé cómo verificamos <span>↗</span></button></div>
+      <div class="verification-list">
+        <article class="verification-row"><span class="status-icon official">✓</span><div><h3>Información oficial</h3><p>La prestación aparece respaldada por una fuente oficial identificable.</p></div><span class="row-arrow">↗</span></article>
+        <article class="verification-row"><span class="status-icon pending">◷</span><div><h3>Pendiente de verificar</h3><p>Hay información compatible, pero todavía falta confirmación suficiente.</p></div><span class="row-arrow">↗</span></article>
+        <article class="verification-row"><span class="status-icon reported">!</span><div><h3>Reportado por una persona</h3><p>Un reporte reciente pide revisar el dato; no reemplaza la fuente oficial.</p></div><span class="row-arrow">↗</span></article>
+        <article class="verification-row"><span class="status-icon stale">↻</span><div><h3>Información desactualizada</h3><p>La información existe, pero hace tiempo que no se actualiza.</p></div><span class="row-arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="before-section"><div class="before-icon">✳</div><div><span class="section-kicker">UN PASO MÁS, ANTES DE SALIR</span><h2>Confirmá antes de pedir turno.</h2><p>La cartilla ayuda a encontrar opciones, pero la disponibilidad puede cambiar. Llamá al centro para confirmar que realizan el estudio y aceptan tu cobertura.</p></div><div class="before-side">La información<br>puede cambiar <span>→</span></div></section>
+    <section class="source-strip"><span class="source-symbol">◎</span><div><b>Empezamos por la cartilla pública de PAMI.</b><p>Relevamos 10 categorías públicas de Cartilla, 67 servicios y 24 jurisdicciones. Cada resultado conserva la relación publicada entre prestación y sede, junto con fuente y fecha de consulta.</p></div><a href="https://www.pami.org.ar/cartilla/buscar-servicio-medico?categoria=2&amp;modulo=8&amp;provincia=1&amp;departamento=1001" target="_blank" rel="noopener">Ver consulta oficial ↗</a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark"><i></i><i></i><i></i></span><span>estudio<span class="brand-accent">SI</span></span></a><span>Una herramienta para buscar con más claridad.</span><a href="#como-verificamos">Cómo verificamos</a></footer>
+
+  <dialog id="method-dialog" class="modal"><button class="modal-close" aria-label="Cerrar">×</button><span class="section-kicker">TRANSPARENCIA</span><h2>¿Cómo verificamos la información?</h2><p>Los resultados se obtienen de la Cartilla pública de PAMI. La sede figura bajo el servicio y la jurisdicción indicados; eso no confirma disponibilidad, cobertura vigente ni realización del estudio.</p><div class="method-note"><b>Alcance de la captura</b><p>El 7 de octubre de 2026 se consultaron 10 categorías, 67 servicios y las 24 jurisdicciones, recorriendo las modalidades públicas de Cartilla y sus páginas de resultados. El conjunto contiene 64.487 relaciones prestación–sede y 18.202 identificadores de sede.</p><a href="https://www.pami.org.ar/cartilla/buscar-servicio-medico" target="_blank" rel="noopener">Abrir la Cartilla PAMI ↗</a></div><div class="method-note"><b>Encefalograma</b><p>PAMI lista “Estudios neurológicos de alta complejidad”. La app permite buscar “encefalograma” para encontrar esa categoría relacionada, pero el nombre de la categoría no confirma que cada sede realice esa práctica específica. Confirmalo con el prestador.</p></div><div class="method-note"><b>Información adicional</b><p>Los listados de UGL/agencias son oficinas de atención y no se mezclan con sedes médicas. Los conteos XLSX de prestadores no identifican centros individuales.</p><a href="https://datos.pami.org.ar/dataset/listado-de-prestadores" target="_blank" rel="noopener">Consultar datos abiertos PAMI ↗</a></div><p class="modal-footnote">estudioSI no gestiona turnos. Confirmá directamente con el prestador antes de ir.</p></dialog>
+  <dialog id="report-dialog" class="modal report-modal"><button class="modal-close" aria-label="Cerrar">×</button><span class="section-kicker">AYUDANOS A REVISAR</span><h2>¿La información estaba mal?</h2><p>Contanos qué dato debería revisarse. No incluyas datos personales ni información médica.</p><form id="report-form"><label>Centro o prestador<input name="provider" placeholder="Nombre del centro" required></label><label>Estudio (si corresponde)<input name="study" placeholder="Nombre del estudio"></label><label>¿Qué encontraste?<select name="type" required><option value="" disabled selected>Elegí una opción</option><option>No realizan este estudio</option><option>Ya no trabajan con esta cobertura</option><option>El teléfono no funciona</option><option>La dirección es incorrecta</option><option>Me informaron que no hay turnos</option><option>Otro</option></select></label><label>¿Cuándo verificaste la información?<input name="checkedAt" type="date" required></label><label>Detalle (opcional)<textarea name="description" rows="3" placeholder="Un poco más de contexto"></textarea></label><div class="report-foot">En esta versión de demostración, el reporte se guarda solamente en este navegador.</div><button class="search-button" type="submit">Guardar reporte <span>→</span></button></form><div id="report-success" class="report-success" hidden>Gracias. El reporte quedó guardado en este navegador para revisión local.</div></dialog>
+  <dialog id="admin-dialog" class="modal"><button class="modal-close" aria-label="Cerrar">×</button><span class="section-kicker">ADMINISTRACIÓN LOCAL · DEMO</span><h2>Reportes guardados</h2><p>Esta lista está en este navegador; todavía no hay envío a un servidor.</p><div id="admin-list"></div></dialog>
+  <button class="admin-access" id="admin-access" title="Ver reportes de esta demostración">Revisión local <span id="report-count">0</span></button>
+  <script src="pami-cartilla-completa.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
